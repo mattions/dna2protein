@@ -1,10 +1,10 @@
 # Build the image: 
 
-Ee call it dna2protein, so it easy to refer to:
+We create an image, called `dna2protein`, and build it using the `Dockerfile`:
 
 	docker build -t dna2protein .
 	
-# Launch a container with our program (to test)
+# We can launch a container, and see if we have everything we need.
 
 	docker run -it dna2protein bash
 	
@@ -12,3 +12,5 @@ Ee call it dna2protein, so it easy to refer to:
 
 	docker run dna2protein transcribe.py
 	docker run dna2protein translate.py
+	
+Now our scripts are dockerized and we can use it directly from the image.
