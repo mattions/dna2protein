@@ -20,7 +20,7 @@ def transcribe(args):
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
-	parser = argparse.ArgumentParser()
+	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA")
 	parser.add_argument("dna", type=argparse.FileType("r"))
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
 	# By setting args as var(...), it becomes a dict, so 'dna' is a key
