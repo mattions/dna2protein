@@ -29,10 +29,10 @@ def translate(args):
             protein += codon_map[mRNA[start:start+3]]
             start += 3
         protein = protein[:protein.find('STOP')]
-        with open("peptide.txt", "w") as output:
+        with open(args.output, "w") as output:
             output.write(protein)
             if args['verbose']:
-                print "Protein has been transcribed. Result in peptide.txt"
+                print "Protein has been transcribed. Result in {0}".format(args.output)
     else:
         if args['verbose']:
             msg = "No AUG found as starting codon. This program translates only mRNA "
@@ -44,6 +44,7 @@ if __name__ == "__main__":
     """ Parse the command line arguments """
     parser = argparse.ArgumentParser(description="Transcribe the provided mRNA into a peptide.")
     parser.add_argument("mRNA", type=argparse.FileType('r'), help="mRNA to transcribe")
+    parser.add_argument("--output", "-o", default="peptide.txt")
     parser.add_argument("--verbose", "-v", help="Run in verbose mode", action="store_true")
     args = vars(parser.parse_args())
 

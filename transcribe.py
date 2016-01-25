@@ -15,13 +15,14 @@ def transcribe(args):
 	if args['verbose']:
 		print ("Your original DNA sequence: {0}".format(DNA))
 		print ("Your translated mRNA sequence: {0}".format(mRNA))
-	with open("rna.txt", "w") as output:
+	with open(args.output, "w") as output:
 		output.write(mRNA)
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
 	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA")
 	parser.add_argument("dna", type=argparse.FileType("r"))
+	parser.add_argument("--output", "-o", default="rna.txt")
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
 	# By setting args as var(...), it becomes a dict, so 'dna' is a key
 	# Alternative use: args = parser.parse_args(), and 'dna' is an attr of args!
