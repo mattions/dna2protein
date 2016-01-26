@@ -15,7 +15,7 @@ def transcribe(args):
 	if args['verbose']:
 		print ("Your original DNA sequence: {0}".format(DNA))
 		print ("Your translated mRNA sequence: {0}".format(mRNA))
-	with open(args.output, "w") as output:
+	with open(args['output'], "w") as output:
 		output.write(mRNA)
 
 if __name__ == "__main__":

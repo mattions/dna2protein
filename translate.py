@@ -29,7 +29,7 @@ def translate(args):
             protein += codon_map[mRNA[start:start+3]]
             start += 3
         protein = protein[:protein.find('STOP')]
-        with open(args.output, "w") as output:
+        with open(args['output'], "w") as output:
             output.write(protein)
             if args['verbose']:
                 print "Protein has been transcribed. Result in {0}".format(args.output)
