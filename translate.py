@@ -34,10 +34,9 @@ def translate(args):
             if args['verbose']:
                 print "Protein has been transcribed. Result in {0}".format(args.output)
     else:
-        if args['verbose']:
-            msg = "No AUG found as starting codon. This program translates only mRNA "
-            msg += "from eukaryotes: https://en.wikipedia.org/wiki/Start_codon"
-            print msg
+        msg = "No AUG found as starting codon in your mRNA input. This program translates only mRNA "
+        msg += "from eukaryotes: https://en.wikipedia.org/wiki/Start_codon"
+        print msg
         
 
 if __name__ == "__main__":
