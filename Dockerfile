@@ -17,5 +17,5 @@ WORKDIR /code
 
 ADD . /code
 
-# Ading the `code` directory to the path, so we can execute the script.
+# Adding the `code` directory to the path, so we can execute the script.
 ENV PATH /code:$PATH
