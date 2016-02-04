@@ -1,16 +1,38 @@
 # Build the image: 
 
-We create an image, called `dna2protein`, and build it using the `Dockerfile`:
+We create an image, called `mmattioni/dna2protein`, and build it using the `Dockerfile`.
+Note: `mmattioni` is the username on the Seven Bridges Platform, `dna2protein` is the 
+development project we have created there.
 
-	docker build -t dna2protein .
+	docker build -t mmattioni/dna2protein .
 	
 # We can launch a container, and see if we have everything we need.
 
-	docker run -it dna2protein bash
+	docker run -it mmattioni/dna2protein bash
 	
 # Launch our scripts from the container:
 
-	docker run dna2protein transcribe.py
-	docker run dna2protein translate.py
+	docker run mmattioni/dna2protein transcribe.py -h
+	docker run mmattioni/dna2protein translate.py -h
 	
 Now our scripts are dockerized and we can use it directly from the image.
+
+# Push our image to the SevenBridges registry
+
+You need the sbg client. If you do not have it, you can install it via:
+
+	pip install sbg-cli
+	
+First we need to tag the image
+
+	docker tag mmattioni/dna2protein images.sbgenomics.com/mmattioni/dan2protein
+
+Now we login and push it to the registry
+
+	sbg login
+	sbg docker-push mmattioni/dna2protein
+	
+	
+
+	
+	
