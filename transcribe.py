@@ -24,6 +24,7 @@ if __name__ == "__main__":
 	parser.add_argument("dna", type=argparse.FileType("r"))
 	parser.add_argument("--output", "-o", default="rna.txt")
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
+	parser.add_argument("--version", action='version', version='0.3')
 	# By setting args as var(...), it becomes a dict, so 'dna' is a key
 	# Alternative use: args = parser.parse_args(), and 'dna' is an attr of args!
 	# You must change how you call the args you parse based on this usage! 

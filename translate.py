@@ -45,6 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("mRNA", type=argparse.FileType('r'), help="mRNA to transcribe")
     parser.add_argument("--output", "-o", default="peptide.txt")
     parser.add_argument("--verbose", "-v", help="Run in verbose mode", action="store_true")
+    parser.add_argument("--version", action='version', version='0.3')
     args = vars(parser.parse_args())
 
     """ Run the main method """
