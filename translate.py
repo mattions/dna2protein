@@ -32,7 +32,7 @@ def translate(args):
         with open(args['output'], "w") as output:
             output.write(protein)
             if args['verbose']:
-                print "Protein has been transcribed. Result in {0}".format(args.output)
+                print "Protein has been transcribed. Result in {0}".format(args['output'])
     else:
         msg = "No AUG found as starting codon in your mRNA input. This program translates only mRNA "
         msg += "from eukaryotes: https://en.wikipedia.org/wiki/Start_codon"
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     parser.add_argument("mRNA", type=argparse.FileType('r'), help="mRNA to transcribe")
     parser.add_argument("--output", "-o", default="peptide.txt")
     parser.add_argument("--verbose", "-v", help="Run in verbose mode", action="store_true")
-    parser.add_argument("--version", action='version', version='0.3')
+    parser.add_argument("--version", action='version', version='0.4')
     args = vars(parser.parse_args())
 
     """ Run the main method """
