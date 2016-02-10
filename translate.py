@@ -4,6 +4,8 @@ import sys
 from transcribe import VERSION
 
 def translate(args):
+    
+    print "Welcome to translate, version: {0}".format(VERSION)
     mRNA = args['mRNA'].read().strip()
     codon_map = {"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
     "UCU":"S", "UCC":"S", "UCA":"S", "UCG":"S",

@@ -13,7 +13,7 @@ def transcribe(args):
 	DNA = args['dna'].read().strip()
 	mRNA = pattern.sub(lambda m: map[re.escape(m.group(0))], DNA)
 
-	# write a verbose output to stderr and just mRNA to sdtout 
+	print "Welcome to transcribe, version: {0}".format(VERSION)
 	if args['verbose']:
 		print ("Your original DNA sequence: {0}".format(DNA))
 		print ("Your translated mRNA sequence: {0}".format(mRNA))
