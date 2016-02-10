@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import sys
+from transcribe import VERSION
 
 def translate(args):
     mRNA = args['mRNA'].read().strip()
@@ -41,11 +42,12 @@ def translate(args):
 
 if __name__ == "__main__":
     """ Parse the command line arguments """
-    parser = argparse.ArgumentParser(description="Transcribe the provided mRNA into a peptide.")
+    parser = argparse.ArgumentParser(description="Transcribe the provided mRNA into a peptide.", 
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("mRNA", type=argparse.FileType('r'), help="mRNA to transcribe")
     parser.add_argument("--output", "-o", default="peptide.txt")
     parser.add_argument("--verbose", "-v", help="Run in verbose mode", action="store_true")
-    parser.add_argument("--version", action='version', version='0.4')
+    parser.add_argument("--version", action='version', version=VERSION)
     args = vars(parser.parse_args())
 
     """ Run the main method """

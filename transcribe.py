@@ -3,6 +3,8 @@ import argparse
 import re
 import sys
 
+VERSION = "0.4.dev"
+
 def transcribe(args):
 	# create a transcription map and use regex to translate
 	map = {"A":"U", "T":"A", "C":"G", "G":"C"}
@@ -20,14 +22,12 @@ def transcribe(args):
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
-	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA")
+	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA", 
+									formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("dna", type=argparse.FileType("r"))
 	parser.add_argument("--output", "-o", default="rna.txt")
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
-	parser.add_argument("--version", action='version', version='0.4')
-	# By setting args as var(...), it becomes a dict, so 'dna' is a key
-	# Alternative use: args = parser.parse_args(), and 'dna' is an attr of args!
-	# You must change how you call the args you parse based on this usage! 
+	parser.add_argument("--version", action='version', version=VERSION) 
 	args = vars(parser.parse_args())
 
 	""" Run the desired methods """
