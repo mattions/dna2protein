@@ -3,7 +3,7 @@ import argparse
 import re
 import sys
 
-VERSION = "0.5"
+VERSION = "0.5.1"
 
 def transcribe(args):
 	# create a transcription map and use regex to translate
