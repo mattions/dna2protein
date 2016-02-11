@@ -28,7 +28,7 @@ Now we login and push it to the registry. Note: you have to provide you API TOKE
 on the Seven Bridges Platform.
 
 	docker login --username <SBG_USERNAME> --email <SBG_EMAIL> --password <SBG_API_TOKEN> images.sbgenomics.com
-	docker push mmattioni/dna2protein
+	docker push images.sbgenomics.com/mmattioni/dna2protein
 	
 
 	
