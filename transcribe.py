@@ -3,7 +3,8 @@ import argparse
 import re
 import sys
 
-VERSION = "0.5.1"
+VERSION = "0.5.2.dev"
+FILENAME_OUTPUT = "rna.txt"
 
 def transcribe(args):
 	# create a transcription map and use regex to translate
@@ -15,17 +16,16 @@ def transcribe(args):
 
 	print "Welcome to transcribe, version: {0}".format(VERSION)
 	if args['verbose']:
-		print ("Your original DNA sequence: {0}".format(DNA))
-		print ("Your translated mRNA sequence: {0}".format(mRNA))
-	with open(args['output'], "w") as output:
+		print "mRNA has been translated. Result in {0}".format(FILENAME_OUTPUT)
+	with open(FILENAME_OUTPUT, "w") as output:
 		output.write(mRNA)
+	print "Done."
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
 	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA", 
 									formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument("dna", type=argparse.FileType("r"))
-	parser.add_argument("--output", "-o", default="rna.txt")
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
 	parser.add_argument("--version", action='version', version=VERSION) 
 	args = vars(parser.parse_args())

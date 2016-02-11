@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import argparse
-import sys
 from transcribe import VERSION
+
+FILENAME_OUTPUT = "peptide.txt"
 
 def translate(args):
     
@@ -32,22 +33,22 @@ def translate(args):
             protein += codon_map[mRNA[start:start+3]]
             start += 3
         protein = protein[:protein.find('STOP')]
-        with open(args['output'], "w") as output:
+        with open(FILENAME_OUTPUT, "w") as output:
             output.write(protein)
             if args['verbose']:
-                print "Protein has been transcribed. Result in {0}".format(args['output'])
+                print "Protein has been transcribed. Result in {0}".format(FILENAME_OUTPUT)
+        
     else:
         msg = "No AUG found as starting codon in your mRNA input. This program translates only mRNA "
         msg += "from eukaryotes: https://en.wikipedia.org/wiki/Start_codon"
         print msg
-        
+    print "Done."
 
 if __name__ == "__main__":
     """ Parse the command line arguments """
     parser = argparse.ArgumentParser(description="Transcribe the provided mRNA into a peptide.", 
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("mRNA", type=argparse.FileType('r'), help="mRNA to transcribe")
-    parser.add_argument("--output", "-o", default="peptide.txt")
     parser.add_argument("--verbose", "-v", help="Run in verbose mode", action="store_true")
     parser.add_argument("--version", action='version', version=VERSION)
     args = vars(parser.parse_args())
