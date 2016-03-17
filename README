@@ -15,7 +15,7 @@ The workflow is composed by two scripts:
 
 # Build the image: 
 
-We create an image, called `mmattioni/dna2protein`, and build it using the `Dockerfile`.
+We create an image, called `dna2protein`, and build it using the `Dockerfile`.
 Note: `mmattioni` is the username on the Seven Bridges Platform, `dna2protein` is the 
 development project we have created there. Change them to yours otherwise won't work.
 
