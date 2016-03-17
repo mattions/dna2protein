@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import argparse
 import re
-import sys
 
-VERSION = "0.5.3.dev"
+
+VERSION = "0.5.3"
 FILENAME_OUTPUT = "rna.txt"
 
 def transcribe(args):
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 	""" Parse the command line arguments """
 	parser = argparse.ArgumentParser(description="Translates a DNA input test into a RNA", 
 									formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-	parser.add_argument("dna", type=argparse.FileType("r"))
+	parser.add_argument("dna", type=argparse.FileType("r"), help="DNA input file to transcribe")
 	parser.add_argument("-v", "--verbose", action="store_true", default=False)
 	parser.add_argument("--version", action='version', version=VERSION) 
 	args = vars(parser.parse_args())
