@@ -1,0 +1,570 @@
+{
+  "sbg:latestRevision": 13,
+  "sbg:id": "mmattioni/dna2protein/dna2protein/13",
+  "sbg:canvas_zoom": 0.6999999999999997,
+  "requirements": [],
+  "sbg:validationErrors": [],
+  "sbg:modifiedBy": "mmattioni",
+  "sbg:sbgMaintained": false,
+  "class": "Workflow",
+  "sbg:canvas_y": -3,
+  "sbg:contributors": [
+    "mmattioni"
+  ],
+  "inputs": [
+    {
+      "id": "#verbose",
+      "inputBinding": {
+        "position": 2,
+        "prefix": "--verbose",
+        "sbg:cmdInclude": true,
+        "separate": true
+      },
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    {
+      "id": "#verbose_1",
+      "description": "If passed, translate will run in verbose mode",
+      "type": [
+        "null",
+        "boolean"
+      ],
+      "inputBinding": {
+        "position": 2,
+        "prefix": "--verbose",
+        "sbg:cmdInclude": true,
+        "separate": true
+      }
+    },
+    {
+      "label": "dna",
+      "id": "#dna",
+      "sbg:x": 313.857149737222,
+      "sbg:y": 296.4285915238518,
+      "type": [
+        "File"
+      ]
+    }
+  ],
+  "sbg:revisionsInfo": [
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455104105,
+      "sbg:revision": 0
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455104351,
+      "sbg:revision": 2
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455275060,
+      "sbg:revision": 6
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455110513,
+      "sbg:revision": 4
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455104213,
+      "sbg:revision": 1
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455109318,
+      "sbg:revision": 3
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1455185309,
+      "sbg:revision": 5
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458224808,
+      "sbg:revision": 7
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458226842,
+      "sbg:revision": 8
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458227291,
+      "sbg:revision": 9
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458228891,
+      "sbg:revision": 10
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458229033,
+      "sbg:revision": 11
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458236136,
+      "sbg:revision": 13
+    },
+    {
+      "sbg:modifiedBy": "mmattioni",
+      "sbg:modifiedOn": 1458236091,
+      "sbg:revision": 12
+    }
+  ],
+  "sbg:revision": 13,
+  "steps": [
+    {
+      "sbg:y": 299.99999999999994,
+      "outputs": [
+        {
+          "id": "#transcribe.rna"
+        },
+        {
+          "id": "#transcribe.log"
+        }
+      ],
+      "run": {
+        "sbg:latestRevision": 7,
+        "requirements": [],
+        "sbg:categories": [
+          "Text-Processing"
+        ],
+        "sbg:id": "mmattioni/dna2protein/transcribe/7",
+        "stdin": "",
+        "sbg:cmdPreview": "transcribe.py  dna.txt > transcribe.log",
+        "sbg:validationErrors": [],
+        "sbg:modifiedBy": "mmattioni",
+        "sbg:sbgMaintained": false,
+        "class": "CommandLineTool",
+        "outputs": [
+          {
+            "id": "#rna",
+            "outputBinding": {
+              "glob": "rna.txt"
+            },
+            "type": [
+              "File"
+            ]
+          },
+          {
+            "id": "#log",
+            "outputBinding": {
+              "glob": "transcribe.log"
+            },
+            "type": [
+              "null",
+              "File"
+            ]
+          }
+        ],
+        "sbg:toolkitVersion": "0.5.2",
+        "baseCommand": [
+          "transcribe.py"
+        ],
+        "inputs": [
+          {
+            "id": "#dna",
+            "label": "Input DNA to transcribe",
+            "inputBinding": {
+              "position": 1,
+              "sbg:cmdInclude": true,
+              "separate": true
+            },
+            "type": [
+              "File"
+            ]
+          },
+          {
+            "id": "#verbose",
+            "inputBinding": {
+              "position": 2,
+              "prefix": "--verbose",
+              "sbg:cmdInclude": true,
+              "separate": true
+            },
+            "description": "If passed, transcribe will run in verbose mode",
+            "type": [
+              "null",
+              "boolean"
+            ]
+          }
+        ],
+        "sbg:revisionsInfo": [
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455200380,
+            "sbg:revision": 2
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455104062,
+            "sbg:revision": 1
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455103997,
+            "sbg:revision": 0
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458221966,
+            "sbg:revision": 4
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458220983,
+            "sbg:revision": 3
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458226965,
+            "sbg:revision": 5
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458227112,
+            "sbg:revision": 6
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458235986,
+            "sbg:revision": 7
+          }
+        ],
+        "sbg:revision": 7,
+        "stdout": "transcribe.log",
+        "sbg:job": {
+          "inputs": {
+            "dna": {
+              "secondaryFiles": [],
+              "class": "File",
+              "path": "dna.txt",
+              "size": 0
+            },
+            "verbose": false
+          },
+          "allocatedResources": {
+            "mem": 1000,
+            "cpu": 1
+          }
+        },
+        "id": "https://api.sbgenomics.com/v2/apps/mmattioni/dna2protein/transcribe/7/raw/",
+        "sbg:project": "mmattioni/dna2protein",
+        "sbg:createdBy": "mmattioni",
+        "arguments": [],
+        "hints": [
+          {
+            "class": "sbg:CPURequirement",
+            "value": 1
+          },
+          {
+            "class": "sbg:MemRequirement",
+            "value": 1000
+          },
+          {
+            "dockerImageId": "",
+            "dockerPull": "images.sbgenomics.com/mmattioni/dna2protein:0.5.3",
+            "class": "DockerRequirement"
+          }
+        ],
+        "label": "transcribe",
+        "sbg:modifiedOn": 1458235986,
+        "successCodes": [],
+        "temporaryFailCodes": [],
+        "sbg:createdOn": 1455103997,
+        "description": "Translates a DNA input test into a RNA",
+        "sbg:contributors": [
+          "mmattioni"
+        ]
+      },
+      "id": "#transcribe",
+      "inputs": [
+        {
+          "id": "#transcribe.dna",
+          "source": [
+            "#dna"
+          ]
+        },
+        {
+          "id": "#transcribe.verbose",
+          "source": [
+            "#verbose"
+          ]
+        }
+      ],
+      "sbg:x": 531
+    },
+    {
+      "sbg:y": 302.85726463552123,
+      "outputs": [
+        {
+          "id": "#translate.protein"
+        },
+        {
+          "id": "#translate.log"
+        }
+      ],
+      "run": {
+        "sbg:latestRevision": 10,
+        "requirements": [],
+        "sbg:categories": [
+          "Text-Processing"
+        ],
+        "sbg:id": "mmattioni/dna2protein/translate/10",
+        "stdin": "",
+        "sbg:cmdPreview": "translate.py  rna.txt > translate.log",
+        "sbg:validationErrors": [],
+        "sbg:modifiedBy": "mmattioni",
+        "sbg:sbgMaintained": false,
+        "class": "CommandLineTool",
+        "outputs": [
+          {
+            "id": "#protein",
+            "outputBinding": {
+              "glob": "peptide.txt"
+            },
+            "type": [
+              "null",
+              "File"
+            ]
+          },
+          {
+            "id": "#log",
+            "outputBinding": {
+              "glob": "translate.log"
+            },
+            "type": [
+              "null",
+              "File"
+            ]
+          }
+        ],
+        "sbg:toolkitVersion": "0.5.2",
+        "baseCommand": [
+          "translate.py"
+        ],
+        "inputs": [
+          {
+            "id": "#rna",
+            "type": [
+              "File"
+            ],
+            "inputBinding": {
+              "position": 1,
+              "sbg:cmdInclude": true,
+              "separate": true
+            }
+          },
+          {
+            "id": "#verbose",
+            "description": "If passed, translate will run in verbose mode",
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "inputBinding": {
+              "position": 2,
+              "prefix": "--verbose",
+              "sbg:cmdInclude": true,
+              "separate": true
+            }
+          }
+        ],
+        "sbg:revisionsInfo": [
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455104091,
+            "sbg:revision": 1
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455110644,
+            "sbg:revision": 2
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455191506,
+            "sbg:revision": 3
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1455103989,
+            "sbg:revision": 0
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458235968,
+            "sbg:revision": 10
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458224681,
+            "sbg:revision": 4
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458227015,
+            "sbg:revision": 5
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458227055,
+            "sbg:revision": 6
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458227180,
+            "sbg:revision": 7
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458228860,
+            "sbg:revision": 8
+          },
+          {
+            "sbg:modifiedBy": "mmattioni",
+            "sbg:modifiedOn": 1458229003,
+            "sbg:revision": 9
+          }
+        ],
+        "sbg:revision": 10,
+        "stdout": "translate.log",
+        "sbg:job": {
+          "inputs": {
+            "rna": {
+              "secondaryFiles": [],
+              "class": "File",
+              "path": "rna.txt",
+              "size": 0
+            },
+            "verbose": false
+          },
+          "allocatedResources": {
+            "mem": 1000,
+            "cpu": 1
+          }
+        },
+        "id": "https://api.sbgenomics.com/v2/apps/mmattioni/dna2protein/translate/10/raw/",
+        "sbg:project": "mmattioni/dna2protein",
+        "sbg:createdBy": "mmattioni",
+        "arguments": [],
+        "hints": [
+          {
+            "class": "sbg:CPURequirement",
+            "value": 1
+          },
+          {
+            "class": "sbg:MemRequirement",
+            "value": 1000
+          },
+          {
+            "dockerImageId": "",
+            "dockerPull": "images.sbgenomics.com/mmattioni/dna2protein:0.5.3",
+            "class": "DockerRequirement"
+          }
+        ],
+        "label": "translate",
+        "sbg:modifiedOn": 1458235968,
+        "successCodes": [],
+        "temporaryFailCodes": [],
+        "sbg:createdOn": 1455103989,
+        "description": "Transcribe the provided mRNA into a peptide",
+        "sbg:contributors": [
+          "mmattioni"
+        ]
+      },
+      "id": "#translate",
+      "inputs": [
+        {
+          "id": "#translate.rna",
+          "source": [
+            "#transcribe.rna"
+          ]
+        },
+        {
+          "id": "#translate.verbose",
+          "source": [
+            "#verbose_1"
+          ]
+        }
+      ],
+      "sbg:x": 852.8574448994398
+    }
+  ],
+  "sbg:canvas_x": 69,
+  "id": "https://api.sbgenomics.com/v2/apps/mmattioni/dna2protein/dna2protein/13/raw/",
+  "sbg:project": "mmattioni/dna2protein",
+  "sbg:createdBy": "mmattioni",
+  "hints": [],
+  "label": "dna2protein",
+  "sbg:modifiedOn": 1458236136,
+  "outputs": [
+    {
+      "label": "rna",
+      "sbg:includeInPorts": true,
+      "sbg:y": 168.5714704357868,
+      "source": [
+        "#transcribe.rna"
+      ],
+      "type": [
+        "File"
+      ],
+      "id": "#rna",
+      "sbg:x": 1112.285866717908
+    },
+    {
+      "label": "log",
+      "sbg:y": 455.2857443264554,
+      "source": [
+        "#transcribe.log"
+      ],
+      "sbg:includeInPorts": true,
+      "id": "#log",
+      "sbg:x": 661.4286218370713,
+      "type": [
+        "null",
+        "File"
+      ]
+    },
+    {
+      "label": "protein",
+      "sbg:y": 310.00003546111543,
+      "source": [
+        "#translate.protein"
+      ],
+      "sbg:includeInPorts": true,
+      "id": "#protein",
+      "sbg:x": 1114.286058386996,
+      "type": [
+        "null",
+        "File"
+      ]
+    },
+    {
+      "label": "log_1",
+      "sbg:y": 458.57147539878514,
+      "source": [
+        "#translate.log"
+      ],
+      "sbg:includeInPorts": true,
+      "id": "#log_1",
+      "sbg:x": 967.1429491821622,
+      "type": [
+        "null",
+        "File"
+      ]
+    }
+  ],
+  "description": "### From DNA to peptide\n\nExample workflow to transcribe and translate a piece of DNA into a peptide.",
+  "sbg:createdOn": 1455104105
+}
