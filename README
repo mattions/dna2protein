@@ -1,3 +1,7 @@
+<a href = "https://www.sbgenomics.com/"><img src ="https://www.sbgenomics.com/media/uploads/brand/sb_logosq_rgb_web_white.png" width ="300" align="center"></a>
+
+If you are following the tutorial, switch to the <a href="https://github.com/sbg/dna2protein/tree/tutorial">tutorial branch</a>.
+
 # What it is?
 
 [![Build Status](https://travis-ci.org/mattions/dna2protein.svg?branch=setup_travis)](https://travis-ci.org/mattions/dna2protein)
