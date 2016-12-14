@@ -84,7 +84,7 @@ on the Seven Bridges Platform.
 The CWL associated for the whole workflow is in the root of the directory and it's called
 `dna2protein.cwl.json`
 
-you can run it locally with rabix (https://pypi.python.org/pypi/rabix/0.8.0)
+you can run it locally with rabix (grab the latest release from https://github.com/rabix/bunny/releases)
 
 	rabix --verbose dna2protein.cwl.json -- --dna dna.txt
 
