@@ -9,7 +9,7 @@ FILENAME_OUTPUT = "rna.txt"
 def transcribe(args):
 	# create a transcription map and use regex to translate
 	map = {"A":"U", "T":"A", "C":"G", "G":"C"}
-	map = dict((re.escape(k), v) for k, v in map.iteritems())
+	map = dict((re.escape(k), v) for k, v in map.items())
 	pattern = re.compile("|".join(map.keys()))
 	DNA = args['dna'].read().strip()
 	mRNA = pattern.sub(lambda m: map[re.escape(m.group(0))], DNA)
