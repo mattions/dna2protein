@@ -14,12 +14,12 @@ def transcribe(args):
 	DNA = args['dna'].read().strip()
 	mRNA = pattern.sub(lambda m: map[re.escape(m.group(0))], DNA)
 
-	print "Welcome to transcribe, version: {0}".format(VERSION)
+	print("Welcome to transcribe, version: {0}".format(VERSION))
 	if args['verbose']:
-		print "mRNA has been translated. Result in {0}".format(FILENAME_OUTPUT)
+		print("mRNA has been translated. Result in {0}".format(FILENAME_OUTPUT))
 	with open(FILENAME_OUTPUT, "w") as output:
 		output.write(mRNA)
-	print "Done."
+	print("Done.")
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
