@@ -1,7 +1,7 @@
 # dna2protein - dockerize the tool
+FROM python:3.6
 
-# base image from python 2.7
-FROM python:2.7
+MAINTAINER michele.mattioni@sbgenomics.com
 
 ENV PYTHONUNBUFFERED 1
 
@@ -19,3 +19,5 @@ ADD . /code
 
 # Adding the `code` directory to the path, so we can execute the script.
 ENV PATH /code:$PATH
+
+COPY Dockerfile /opt/

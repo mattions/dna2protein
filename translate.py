@@ -6,7 +6,7 @@ FILENAME_OUTPUT = "peptide.txt"
 
 def translate(args):
     
-    print "Welcome to translate, version: {0}".format(VERSION)
+    print ("Welcome to translate, version: {0}".format(VERSION))
     mRNA = args['mRNA'].read().strip()
     codon_map = {"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
     "UCU":"S", "UCC":"S", "UCA":"S", "UCG":"S",
@@ -36,13 +36,13 @@ def translate(args):
         with open(FILENAME_OUTPUT, "w") as output:
             output.write(protein)
             if args['verbose']:
-                print "Protein has been transcribed. Result in {0}".format(FILENAME_OUTPUT)
+                print("Protein has been transcribed. Result in {0}".format(FILENAME_OUTPUT))
         
     else:
         msg = "No AUG found as starting codon in your mRNA input. This program translates only mRNA "
         msg += "from eukaryotes: https://en.wikipedia.org/wiki/Start_codon"
-        print msg
-    print "Done."
+        print(msg)
+    print ("Done.")
 
 if __name__ == "__main__":
     """ Parse the command line arguments """

@@ -1,3 +1,7 @@
+<a href = "https://www.sbgenomics.com/"><img src ="http://sevenbridges-python.readthedocs.io/en/latest/_static/logo.png" width ="300" align="center"></a>
+
+If you are following the tutorial, switch to the <a href="https://github.com/sbg/dna2protein/tree/tutorial">tutorial branch</a>.
+
 # What it is?
 
 [![Build Status](https://travis-ci.org/mattions/dna2protein.svg?branch=setup_travis)](https://travis-ci.org/mattions/dna2protein)
@@ -80,7 +84,7 @@ on the Seven Bridges Platform.
 The CWL associated for the whole workflow is in the root of the directory and it's called
 `dna2protein.cwl.json`
 
-you can run it locally with rabix (https://pypi.python.org/pypi/rabix/0.8.0)
+you can run it locally with rabix (grab the latest release from https://github.com/rabix/bunny/releases)
 
 	rabix --verbose dna2protein.cwl.json -- --dna dna.txt
 

@@ -3,23 +3,23 @@ import argparse
 import re
 
 
-VERSION = "0.5.4.dev"
+VERSION = "0.5.5.dev"
 FILENAME_OUTPUT = "rna.txt"
 
 def transcribe(args):
 	# create a transcription map and use regex to translate
 	map = {"A":"U", "T":"A", "C":"G", "G":"C"}
-	map = dict((re.escape(k), v) for k, v in map.iteritems())
+	map = dict((re.escape(k), v) for k, v in map.items())
 	pattern = re.compile("|".join(map.keys()))
 	DNA = args['dna'].read().strip()
 	mRNA = pattern.sub(lambda m: map[re.escape(m.group(0))], DNA)
 
-	print "Welcome to transcribe, version: {0}".format(VERSION)
+	print("Welcome to transcribe, version: {0}".format(VERSION))
 	if args['verbose']:
-		print "mRNA has been translated. Result in {0}".format(FILENAME_OUTPUT)
+		print("mRNA has been translated. Result in {0}".format(FILENAME_OUTPUT))
 	with open(FILENAME_OUTPUT, "w") as output:
 		output.write(mRNA)
-	print "Done."
+	print("Done.")
 
 if __name__ == "__main__":
 	""" Parse the command line arguments """
