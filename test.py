@@ -16,8 +16,8 @@ def test_result():
     subprocess.call(cmdline.split(" "))
     stored_rna = "data/stored/rna.txt"
     stored_peptide = "data/stored/peptide.txt"
-    output_rna = glob.glob("transcribe_*/rna.txt")[0]
-    output_peptide = glob.glob("translate_*/peptide.txt")[0]
+    output_rna = glob.glob("dna2protein.cwl-*/root/transcribe/rna.txt")[0]
+    output_peptide = glob.glob("dna2protein.cwl-*/root/translate/peptide.txt")[0]
     _compare_files(output_rna, stored_rna)
     _compare_files(output_peptide, stored_peptide)
     
