@@ -6,10 +6,12 @@ services:
 language: python
 
 python:
-    - "2.7"
+    - "3.6"
 
-# command to install ci dependencies
-install: "pip install -r requirements.ci.txt"
+before_script: 
+    - wget https://github.com/rabix/bunny/releases/download/v1.0.0-rc3/rabix-1.0.0-rc3.tar.gz 
+    - tar -xvf rabix-1.0.0-rc3.tar.gz
+    - export PATH=$PATH:$PWD/rabix-backend-local-1.0.0-rc3/
 
 # command to run the test
 script: ./test.py
