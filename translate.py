@@ -2,7 +2,7 @@
 import argparse
 from transcribe import VERSION
 
-FILENAME_OUTPUT = "peptide.txt"
+FILENAME_OUTPUT = "protein.txt"
 
 def translate(args):
     
