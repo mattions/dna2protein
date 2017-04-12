@@ -6,16 +6,26 @@ inputs:
   - id: dna
     type: File
     fileTypes: []
-    'sbg:x': -683.9168701171875
-    'sbg:y': -74.864013671875
+    'sbg:x': -707.3352146362032
+    'sbg:y': 7.558805120071309
+  - id: verbose_transcribe
+    type: boolean?
+    fileTypes: []
+    'sbg:x': -717.7321961678115
+    'sbg:y': -145.01937835488542
+  - id: verbose_translate
+    type: boolean?
+    fileTypes: []
+    'sbg:x': -195.6386796238705
+    'sbg:y': -254.33155935402684
 outputs:
   - id: rna
     outputSource:
       - transcribe/rna
     type: File
     fileTypes: []
-    'sbg:x': -116.9168701171875
-    'sbg:y': -206.864013671875
+    'sbg:x': -373.1210325782998
+    'sbg:y': -149.92108038234497
   - id: protein
     outputSource:
       - translate/protein
@@ -30,7 +40,8 @@ steps:
         source:
           - dna
       - id: verbose_transcribe
-        default: true
+        source:
+          - verbose_transcribe
     out:
       - id: rna
     run:
@@ -73,8 +84,8 @@ steps:
             size: 0
           verbose: true
       'sbg:modified': true
-    'sbg:x': -402.9168701171875
-    'sbg:y': -74.864013671875
+    'sbg:x': -521.4851027793799
+    'sbg:y': -83.81255953317253
   - id: translate
     in:
       - id: mRNA
@@ -82,6 +93,8 @@ steps:
           - transcribe/rna
       - id: verbose_translate
         default: true
+        source:
+          - verbose_translate
     out:
       - id: protein
     run:
@@ -118,7 +131,7 @@ steps:
         inputs: {}
         runtime: {}
       'sbg:modified': true
-    'sbg:x': -128.9168701171875
-    'sbg:y': -83.864013671875
+    'sbg:x': -39.76958329548212
+    'sbg:y': -91.61595165637112
 description: ''
 'sbg:modified': true
