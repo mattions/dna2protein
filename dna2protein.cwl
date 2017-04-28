@@ -16,8 +16,8 @@ inputs:
   - id: verbose_translate
     type: boolean?
     fileTypes: []
-    'sbg:x': -195.6386796238705
-    'sbg:y': -254.33155935402684
+    'sbg:x': -213.41893005371094
+    'sbg:y': -179.67202758789062
 outputs:
   - id: rna
     outputSource:
@@ -31,8 +31,8 @@ outputs:
       - translate/protein
     type: File
     fileTypes: []
-    'sbg:x': 170.0831298828125
-    'sbg:y': -76.864013671875
+    'sbg:x': 147.01910400390625
+    'sbg:y': -92.385986328125
 steps:
   - id: transcribe
     in:
@@ -92,7 +92,6 @@ steps:
         source:
           - transcribe/rna
       - id: verbose_translate
-        default: true
         source:
           - verbose_translate
     out:
@@ -124,6 +123,8 @@ steps:
             glob: protein.txt
       id: translate
       requirements:
+        - class: DockerRequirement
+          dockerPull: 'sevenbridges/dna2protein:0.5.5'
         - class: InitialWorkDirRequirement
           listing: []
       stdout: translate.log
@@ -131,7 +132,7 @@ steps:
         inputs: {}
         runtime: {}
       'sbg:modified': true
-    'sbg:x': -39.76958329548212
-    'sbg:y': -91.61595165637112
+    'sbg:x': -82.98089599609375
+    'sbg:y': -64.385986328125
 description: ''
 'sbg:modified': true

@@ -23,6 +23,8 @@ outputs:
     outputBinding:
       glob: protein.txt
 requirements:
+  - class: DockerRequirement
+    dockerPull: 'sevenbridges/dna2protein:0.5.5'
   - class: InitialWorkDirRequirement
     listing: []
 stdout: translate.log
